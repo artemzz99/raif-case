@@ -73,14 +73,6 @@ def pipe(df_test):
                      'ca_volume', 'sa_volume','mf_volume', 'sum_spend_cash']
     for col in lst_diff_mean:
           df['diff_mean_' + col] = df['diff_sum_'+col]/5
-    for col in lst_diff_sum:
-          df['min_rel_diff_' + col] = df[col].pct_change(axis='columns').drop(1,axis=1).min(axis=1)
-    for col in lst_diff_sum:
-          df['max_rel_diff_' + col] = df[col].pct_change(axis='columns').drop(1,axis=1).max(axis=1)
-    for col in lst_diff_sum:
-          df['mean_rel_diff_' + col] = df[col].pct_change(axis='columns').drop(1,axis=1).sum(axis=1)/5
-    for col in lst_diff_sum:
-          df['sum_rel_diff_' + col] = df[col].pct_change(axis='columns').drop(1,axis=1).sum(axis=1)
     last_col_lst = ['cur_quantity_pl', 'cur_quantity_mort', 'cur_quantity_cc',
            'cur_quantity_deposits', 'cur_quantity_dc', 'cur_quantity_accounts',
            'cur_quantity_saccounts', 'cur_quantity_mf', 'ca_f', 'cu_age', 'cu_mob', 
